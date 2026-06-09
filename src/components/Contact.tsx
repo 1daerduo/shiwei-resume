@@ -1,6 +1,8 @@
-import resumeData from "@/data/resume";
+import resumeData, { PersonalInfo } from "@/data/resume";
 
 export default function Contact() {
+  const { personalInfo } = resumeData;
+  
   return (
     <section id="contact" className="py-24 bg-[var(--bg-section)]">
       <div className="max-w-5xl mx-auto px-6">
@@ -17,6 +19,27 @@ export default function Contact() {
             <div className="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6">
               <h3 className="font-semibold mb-4">个人信息</h3>
               <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3 text-[var(--text-secondary)]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--accent)] flex-shrink-0">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4l2 2" />
+                  </svg>
+                  {personalInfo.age}岁 · {personalInfo.gender}
+                </div>
+                <div className="flex items-center gap-3 text-[var(--text-secondary)]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--accent)] flex-shrink-0">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                  身高 {personalInfo.height} · 籍贯 {personalInfo.hometown}
+                </div>
+                <div className="flex items-center gap-3 text-[var(--text-secondary)]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--accent)] flex-shrink-0">
+                    <line x1="12" y1="1" x2="12" y2="23" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                  </svg>
+                  期望薪资：{personalInfo.expectedSalary}
+                </div>
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--accent)] flex-shrink-0">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -52,14 +75,13 @@ export default function Contact() {
           <div className="flex flex-col">
             <div className="flex-1 rounded-xl border border-[var(--accent)] bg-[var(--bg-card)] p-6 flex flex-col justify-center">
               <div className="font-mono text-sm text-[var(--accent)] mb-4">
-                {">"} 入职时间：一个月内到岗
+                {">"} {personalInfo.availability}
               </div>
               <h3 className="text-2xl font-bold mb-3">
                 寻找下一个挑战
               </h3>
               <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-                如果你的团队正在寻找一位有扎实嵌入式 Linux
-                经验的工程师，欢迎联系我。我对新技术保持热情，对代码质量有追求，期待在一个充满挑战的环境中继续成长。
+                {resumeData.selfReview}
               </p>
 
               <div className="flex flex-wrap gap-3">

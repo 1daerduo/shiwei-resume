@@ -1,3 +1,12 @@
+export interface PersonalInfo {
+  age: number;
+  gender: string;
+  height: string;
+  hometown: string;
+  expectedSalary: string;
+  availability: string;
+}
+
 export interface Experience {
   company: string;
   role: string;
@@ -28,6 +37,14 @@ const resumeData = {
   email: "1183614070@qq.com",
   phone: "15578216171",
   location: "深圳",
+  personalInfo: {
+    age: 29,
+    gender: "男",
+    height: "175cm",
+    hometown: "桂林",
+    expectedSalary: "36W+",
+    availability: "一个月内到岗",
+  },
   education: {
     school: "广西科技大学",
     degree: "测控技术与仪器（本科）",
@@ -145,7 +162,7 @@ const resumeData = {
     },
   ] as Project[],
   selfReview:
-    "本人具有丰富的行车记录仪和家居安防软件开发经验和技术背景，对新技朮具有强烈的学习意愿和快速的学习能力。在团队中，我能够发挥领导作用，指导新员工，并通过团队合作不断推进项目的进展。我注重细节，具有良好的分析和解决问题的能力，能够在高压环境下工作，并保持积极的态度。",
+    "本人具有丰富的行车记录仪和家居安防软件开发经验和技术背景，对新技术具有强烈的学习意愿和快速的学习能力。在团队中，我能够发挥领导作用，指导新员工，并通过团队合作不断推进项目的进展。我注重细节，具有良好的分析和解决问题的能力，能够在高压环境下工作，并保持积极的态度。我渴望在一个充满挑战和机遇的环境中进一步发展我的职业生涯。",
 };
 
 export default resumeData;
